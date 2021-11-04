@@ -13,11 +13,11 @@ function buyBarista(){
 }
 
 function updateCPS(){
-    cps = currentBaristas * (.1 * beansLevel);
+    cps = currentBaristas * (1 + (beansLevel * .1));
     console.log(beansLevel);
-    document.getElementById("cps").innerHTML = "Credits Per Second: " + currentBaristas;
+    document.getElementById("cps").innerHTML = "Credits Per Second: " + cps;
 }
 
 function buildingsTick(){   //tick every .1 seconds
-    increaseCredits(cps); //function of number of baristas and the upgrades applied
+    increaseCredits(cps * .1); //function of number of baristas and the upgrades applied
 }
