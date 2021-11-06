@@ -47,8 +47,8 @@ function buildingsTick(){   //tick every .1 seconds
             increaseCredits(sellBaristas * sellEfficacy * 5);
         }
         else{
-            increaseCredits(coffeeBeans * 5);
-            increaseCoffee(-coffeeBeans);
+            increaseCredits(coffee * 5);
+            increaseCoffee(-coffee);
         }
     }
 }
