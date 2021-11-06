@@ -24,33 +24,51 @@
         </style>
     </head>
 <body>
-    <h1>Space Coffee</h1>
+    <h1 style="font-size:30px">Space Coffee</h1>
+    <img src="./assets/imgs/download.jpg" width="550" height = "366">
     <table id="values">
         <tbody>
             <tr id="creditsRow">
                 <td id="credits">Credits: 0</td>
+                <!---<td id="cps">Credits Per Second: 0</td>-->
             </tr>
-            <tr id="cpsRow">
-                <td id="cps">Credits Per Second: 0</td>
+            <tr id="coffeRow">
+                <td id="coffeeBeans">Coffee Beans: 0</td>
+                <td id="coffee">Coffee: 0</td>
             </tr>
             <tr id="baristasRow">
-                <td id="Baristas">Baristas: 0</td>
+                <td id="brewBaristas">Brew Baristas: 0</td>
+                <td id="sellBaristas">Sell Baristas: 0</td>
             </tr>
         </tbody>
     </table>
-    <button id="clicker" onclick="myFunction()">Credits Button</button>
-    <button id="BaristaButton" onclick="buyBarista()">Barista (10 credits)</button>
+    <button id="clicker" onclick="borrowCredits()">Borrow Credits</button>
+    <button id="buyBeans" onclick="buyBeans()">Buy Beans</button>
+    <button id="makeCoffee" onclick="makeCoffee()">Make Coffee</button>
+    <button id="sellCoffee" onclick="sellCoffee()">Sell Coffee</button>
     <p></p>
-    <table id="upgrades">
+    <table id="workers">
         <tbody>
-            <tr id="upgradesRow">
-                <button hidden id="betterBeansButton" onclick="betterBeans()">Better Beans (150 credits)</button>
-                <button hidden id="c" onclick="f()">f</button>
+            <tr id="baristasButtonRow">
+                <button hidden id="brewBaristaButton" onclick="buyBrewBarista()">Brew Barista [10 credits]</button>
+                <button hidden id="sellBaristaButton" onclick="buySellBarista()">Sell Barista [10 credits]</button>
+                <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee.  Sell Baristas sell coffee for credits. </td>
+            </tr>
+        </tbody>
+    </table>
+    <p></p>
+    <table id="contracts">
+        <tbody>
+            <tr id="beansContractRow">
+                <button hidden id="beansContract" onclick="beansContract()">Beans Contract [250 credits])</button>
+                <button hidden id="beansContractToggle" onclick="toggleBeansContract()">Beans Contract: Currently Off</button>
+                <td style="display:none;" id="beansContractText"> Beans Contract turns 10 credits into 10 beans every 15 seconds </td>
             </tr>
         </tbody>
     </table>
     <script src="./src/upgrades.js"></script>
-    <script src="./src/buildings.js"></script>
+    <script src="./src/workers.js"></script>
+    <script src="./src/contracts.js"></script>
     <script src="./src/main.js"></script>
 
 <!--<button id="buttonMaker" onclick="makeButton()">Button Maker</button>-->
