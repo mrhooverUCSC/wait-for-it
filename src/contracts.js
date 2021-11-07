@@ -6,6 +6,7 @@ function beansContract(){
         increaseCredits(-500);
         document.getElementById("beansContract").hidden = true;
         document.getElementById("beansContractToggle").hidden = false;
+        document.getElementById("contract").hidden = false;
     }
 }
 

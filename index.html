@@ -22,8 +22,13 @@
             }
             .help {
                 position: absolute;
-                left: 1300px;
+                left: 1250px;
                 top: 430px;
+            }
+            .contract{
+                position: absolute;
+                left: 450px;
+                top: 440px;
             }
     </style>
     <canvas id="parallax"></canvas>
@@ -34,7 +39,8 @@
 </head>
 
 <body>
-    <img id="help" hidden src="assets/imgs/Help_Wanted.png" class="help" width=125px>
+    <img id="help" hidden src="assets/imgs/HoloHelpWanted.png" class="help" width=200px>
+    <img id="contract" hidden src="assets/imgs/Coffee_Beans_Holo.png" class="contract" width=300px>
     <div class="centered">
         <h1 style="font-size:30px">Space Coffee</h1>
         <table id="values">
@@ -87,6 +93,7 @@
                 </tr>
             </tbody>
         </table>
+        <button hidden id="beansContract" onclick="beansContract()">Beans Contract [500 credits])</button>
     </div>
     <script src="./src/upgrades.js"></script>
     <script src="./src/workers.js"></script>

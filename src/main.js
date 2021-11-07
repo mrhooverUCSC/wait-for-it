@@ -3,7 +3,7 @@ let coffeeBeans = 0;
 let coffee = 0;
 
 function borrowCredits(){
-    increaseCredits(10);
+    increaseCredits(1);
 }
 function buyBeans(){
     if(credits >= 1){
