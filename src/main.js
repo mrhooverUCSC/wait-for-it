@@ -50,6 +50,12 @@ function increaseCoffee(increase){
 }
 
 window.setInterval(function(){ //tick every .1 seconds
+    if(credits==0){
+        document.getElementById("clicker").hidden = false;
+    }
+    else{
+        document.getElementById("clicker").hidden = true;
+    }
     buildingsTick();
     contractsTick();
     upgradesCheck();

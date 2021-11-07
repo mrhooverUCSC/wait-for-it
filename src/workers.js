@@ -16,7 +16,7 @@ function buyBrewBarista(){
 }
 
 function buySellBarista(){
-    var cost = Math.floor(10 * (sellBaristas + 1));                             //formula for currrent price of Baristas
+    var cost = Math.floor(25 * (sellBaristas + 1));                             //formula for currrent price of Baristas
     if(credits >= cost && sellBaristas < baristaMax){
         sellBaristas++;
         increaseCredits(-cost);
