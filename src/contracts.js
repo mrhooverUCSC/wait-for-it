@@ -6,23 +6,14 @@ let timer = 0;
 
 function beansContract(){
     var contractCost = Math.floor(500 + (100 * (currentContractUpgrade)));
-    if(currentContractUpgrade > 0){
-        var contractCost = Math.floor(500 + (100 * (currentContractUpgrade)));  
-        if(credits >= contractCost){
-            increaseCredits(-contractCost);
-            document.getElementById("beansContract").innerHTML = "Upgrade Beans Contract (" + contractCost + " credits)";
-            currentContractUpgrade++;
-            contractRate = contractRate + amountToUpgrade;
-            amountToUpgrade = amountToUpgrade * 0.9;
-            document.getElementById("beansContractText").innerHTML = "Beans Contract turns " + Math.floor(contractRate * 100) + "% credits into beans every 15 seconds)";
-        }
-    }
-    else if(credits >= 250 && !beansContractCurrently && currentContractUpgrade < 1){
-        increaseCredits(-250);
-        //document.getElementById("beansContract").hidden = true;
-        document.getElementById("beansContract").innerHTML = "Upgrade Beans Contract (" + contractCost + " credits)";
-        document.getElementById("beansContractToggle").hidden = false;
+    if(credits >= contractCost){
+        increaseCredits(-contractCost);
         currentContractUpgrade++;
+        contractRate = contractRate + amountToUpgrade;
+        amountToUpgrade = amountToUpgrade * 0.9;
+        contractCost = Math.floor(500 + (100 * (currentContractUpgrade)));
+        document.getElementById("beansContract").innerHTML = "Upgrade Beans Contract (" + contractCost + " credits)";
+        document.getElementById("beansContractText").innerHTML = "Beans Contract turns " + Math.floor(contractRate * 100) + "% credits into beans every 15 seconds)";
     }
 }
 
