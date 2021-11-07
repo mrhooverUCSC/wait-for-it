@@ -1,5 +1,6 @@
 let baristasRevealed = false;
 let beansContractRevealed = false;
+let expandedMenuRevealed = false;
 let beansLevel = 0;
 
 function betterBeans(){
@@ -20,9 +21,22 @@ function largerStore(){
         document.getElementById("largerStoreButton").innerHTML = "Larger Store " + baristaMax + " (" + Math.floor(100 * Math.pow(baristaMax, 1.4)) + " credits)";
         document.getElementById("sellBaristaButton").hidden = false;
         document.getElementById("sellBaristas").hidden = false;
-        document.getElementById("baristasText").innerHTML = "Brew Baristas turn beans into coffee. Sell Baristas sell coffee for credits"
+        document.getElementById("baristasText").innerHTML = "Brew Baristas turn beans into coffee. Sell Baristas sell coffee for credits."
         document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + (baristaMax-1);
         document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
+    }
+}
+
+function surpass(){
+    if(credits >= 1000){
+        increaseCredits(-1000);
+        document.getElementById("surpass").hidden = true;
+        document.getElementById("surpass").hidden = true;
+        document.getElementById("cupcakesRow").hidden = false;
+        document.getElementById("buyFlour").hidden = false;
+        document.getElementById("makeCupcakes").hidden = false;
+        document.getElementById("sellCupcakes").hidden = false;
+        document.getElementById("baristasText").innerHTML = "Brew Baristas turn beans into coffee. Sell Baristas sell coffee and cupcakes for credits."
     }
 }
 
@@ -38,6 +52,10 @@ function upgradesCheck(){ //if the requirement has been met, add a new upgrade o
         document.getElementById("beansContract").hidden = false;
         document.getElementById("beansContractText").style.display = "block";
         beansContractRevealed = true;
+    }
+    if(credits >= 750 && !expandedMenuRevealed){
+        document.getElementById("surpass").hidden = false;
+        expandedMenuRevealed = true;
     }
     //if(credits >= 100 && !betterBeansRevealed){
     //    document.getElementById("betterBeansButton").hidden = false;

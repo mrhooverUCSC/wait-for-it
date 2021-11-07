@@ -53,6 +53,10 @@
                     <td id="coffeeBeans">Coffee Beans: 0</td>
                     <td id="coffee">Coffee: 0</td>
                 </tr>
+                <tr hidden id="cupcakesRow">
+                    <td id="flour">Flour: 0</td>
+                    <td id="cupcakes">Cupcakes: 0</td>
+                </tr>
                 <tr id="baristasRow">
                     <td hidden id="brewBaristas">Brew Baristas: 0/1</td>
                     <td hidden id="sellBaristas">Sell Baristas: 0/0</td>
@@ -66,6 +70,9 @@
                     <button id="buyBeans" onclick="buyBeans()">Buy Beans</button>
                     <button id="makeCoffee" onclick="makeCoffee()">Make Coffee</button>
                     <button id="sellCoffee" onclick="sellCoffee()">Sell Coffee</button>
+                    <button hidden id="buyFlour" onclick="buyFlour()">Buy Flour</button>
+                    <button hidden id="makeCupcakes" onclick="makeCupcakes()">Make Cupcakes</button>
+                    <button hidden id="sellCupcakes" onclick="sellCupcakes()">Sell Cupcakes</button>
                 </tr>
             </tbody>
         </table>
@@ -73,7 +80,7 @@
         <table id="workers">
             <tbody>
                 <tr id="baristasButtonRow">
-                    <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee. </td>
+                    <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee.</td>
                     <button hidden id="brewBaristaButton" onclick="buyBrewBarista()">Brew Barista [10 credits]</button>
                     <button hidden id="sellBaristaButton" onclick="buySellBarista()">Sell Barista [25 credits]</button>
                     <button hidden id="largerStoreButton" onclick="largerStore()">Larger Store 1 [100 credits]</button>
@@ -85,7 +92,7 @@
         <table id="contracts">
             <tbody>
                 <tr id="beansContractRow">
-                    <button hidden id="beansContract" onclick="beansContract()">Beans Contract [500 credits])</button>
+                    <button hidden id="beansContract" onclick="beansContract()">Beans Contract [500 credits]</button>
                     <button hidden id="beansContractToggle" onclick="toggleBeansContract()">Beans Contract: Currently
                         Off</button>
                     <td style="display:none;" id="beansContractText"> Beans Contract turns 10 credits into 10 beans every 15
@@ -93,7 +100,14 @@
                 </tr>
             </tbody>
         </table>
-        <button hidden id="beansContract" onclick="beansContract()">Beans Contract [500 credits])</button>
+        <p></p>
+        <table id="expandedMenu">
+            <tbody>
+                <tr id="cupcakeContractRow">
+                    <button hidden id="surpass" onclick="surpass()">Expanded Menu [1000 credits]</button>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="./src/upgrades.js"></script>
     <script src="./src/workers.js"></script>

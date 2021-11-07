@@ -45,7 +45,15 @@ function buildingsTick(){   //tick every .1 seconds
         }
     }
     if(sellBaristas > 0){//sell baristas sell .1 coffees into .5 credits per second
-        if((sellBaristas * sellEfficacy) <= coffee){
+        if((sellBaristas * .1) <= cupcakes){
+            increaseCupcakes(-(sellBaristas * .1));
+            increaseCredits(sellBaristas * .1 * 10);
+        }
+        else if(cupcakes > 0){
+            increaseCredits(cupcakes * 10);
+            increaseCupcakes(-cupcakes);
+        }
+        else if((sellBaristas * sellEfficacy) <= coffee){
             increaseCoffee(-(sellBaristas * sellEfficacy));
             increaseCredits(sellBaristas * sellEfficacy * 5);
         }
