@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            @font-face { font-family: GuardingTheAerodrome; src: url('guarding-the-aerodrome.ttf'); } 
-            h1 {
-                color: yellow;
-                font-family: GuardingTheAerodrome;
-                
-            }
-            body {
-                background-color: #362163;
-            }
-            tr {
-                color: white;
-                font-family: GuardingTheAerodrome;
-            }
-            button {
-                background-color: darkcyan;
-                color: black;
-                font-family: GuardingTheAerodrome;
-            }
-            
-        </style>
-    </head>
+
+<head>
+    <!-- Jake's additions STARTS -->
+    <title>Space Coffee</title>
+
+    <!-- Using Parallax as a background - Kris-->
+    <style>
+        #parallax {
+            position:absolute;
+            z-index: -1;
+            top:0;
+            left:0;
+        }
+    </style>
+
+    <canvas id="parallax"></canvas>
+    <script src="./src/parallax.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <!-- ENDS -->
+</head>
+
 <body>
     <h1 style="font-size:30px">Space Coffee</h1>
-    <img src="./assets/imgs/download.jpg" width="550" height = "366">
+    <img src="./assets/imgs/download.jpg" width="550" height="366">
     <table id="values">
         <tbody>
             <tr id="creditsRow">
@@ -52,7 +51,8 @@
             <tr id="baristasButtonRow">
                 <button hidden id="brewBaristaButton" onclick="buyBrewBarista()">Brew Barista [10 credits]</button>
                 <button hidden id="sellBaristaButton" onclick="buySellBarista()">Sell Barista [10 credits]</button>
-                <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee.  Sell Baristas sell coffee for credits. </td>
+                <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee. Sell Baristas sell
+                    coffee for credits. </td>
             </tr>
         </tbody>
     </table>
@@ -61,8 +61,10 @@
         <tbody>
             <tr id="beansContractRow">
                 <button hidden id="beansContract" onclick="beansContract()">Beans Contract [250 credits])</button>
-                <button hidden id="beansContractToggle" onclick="toggleBeansContract()">Beans Contract: Currently Off</button>
-                <td style="display:none;" id="beansContractText"> Beans Contract turns 10 credits into 10 beans every 15 seconds </td>
+                <button hidden id="beansContractToggle" onclick="toggleBeansContract()">Beans Contract: Currently
+                    Off</button>
+                <td style="display:none;" id="beansContractText"> Beans Contract turns 10 credits into 10 beans every 15
+                    seconds </td>
             </tr>
         </tbody>
     </table>
@@ -71,9 +73,15 @@
     <script src="./src/contracts.js"></script>
     <script src="./src/main.js"></script>
 
-<!--<button id="buttonMaker" onclick="makeButton()">Button Maker</button>-->
+    <!--<button id="buttonMaker" onclick="makeButton()">Button Maker</button>-->
 
-<p></p>
+    <p></p>
+
+    <!-- Jake's additions STARTS -->
+    <!---<canvas id="parallax"></canvas>
+    <script src="./src/parallax.js"></script>-->
+    <!-- ENDS -->
 
 </body>
+
 </html>

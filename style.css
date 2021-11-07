@@ -1,0 +1,28 @@
+@font-face {
+    font-family: GuardingTheAerodrome;
+    src: url('guarding-the-aerodrome.ttf');
+}
+body {
+    background-color: black;
+}
+
+h1 {
+    color: yellow;
+    font-family: GuardingTheAerodrome;
+}
+
+tr {
+    color: white;
+    font-family: GuardingTheAerodrome;
+}
+
+button {
+    background-color: darkcyan;
+    color: black;
+    font-family: GuardingTheAerodrome;
+}
+
+#canvas1 {
+    width: 1920px;
+    height: 1080px;
+}
