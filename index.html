@@ -14,20 +14,27 @@
             left:0;
         }
     </style>
-    <!--centering text on blackboard - Matt-->
+    <!--CSS positioning - Matt-->
     <style>
             .centered { 
                 position: absolute;
                 left: 500px;
             }
+            .help {
+                position: absolute;
+                left: 1300px;
+                top: 430px;
+            }
     </style>
     <canvas id="parallax"></canvas>
     <script src="./src/parallax.js"></script>
+
     <link rel="stylesheet" href="./style.css" />
     <!-- ENDS -->
 </head>
 
 <body>
+    <img id="help" hidden src="assets/imgs/Help_Wanted.png" class="help" width=125px>
     <div class="centered">
         <h1 style="font-size:30px">Space Coffee</h1>
         <table id="values">
@@ -40,9 +47,9 @@
                     <td id="coffeeBeans">Coffee Beans: 0</td>
                     <td id="coffee">Coffee: 0</td>
                 </tr>
-                <tr hidden id="baristasRow">
-                    <td id="brewBaristas">Brew Baristas: 0/1</td>
-                    <td id="sellBaristas">Sell Baristas: 0/1</td>
+                <tr id="baristasRow">
+                    <td hidden id="brewBaristas">Brew Baristas: 0/1</td>
+                    <td hidden id="sellBaristas">Sell Baristas: 0/0</td>
                 </tr>
             </tbody>
         </table>
@@ -60,9 +67,7 @@
         <table id="workers">
             <tbody>
                 <tr id="baristasButtonRow">
-                    <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee. Sell Baristas sell
-                        coffee for credits. </td>
-
+                    <td style="display:none;" id="baristasText"> Brew Baristas turn beans into coffee. </td>
                     <button hidden id="brewBaristaButton" onclick="buyBrewBarista()">Brew Barista [10 credits]</button>
                     <button hidden id="sellBaristaButton" onclick="buySellBarista()">Sell Barista [25 credits]</button>
                     <button hidden id="largerStoreButton" onclick="largerStore()">Larger Store 1 [100 credits]</button>

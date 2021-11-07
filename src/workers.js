@@ -8,6 +8,7 @@ let cps = 0;
 function buyBrewBarista(){
     var cost = Math.floor(10 * (brewBaristas + 1));                             //formula for currrent price of Baristas
     if(credits >= cost && brewBaristas < baristaMax){
+        document.getElementById("help").hidden = false;
         brewBaristas++;
         increaseCredits(-cost);
         document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
@@ -17,11 +18,12 @@ function buyBrewBarista(){
 
 function buySellBarista(){
     var cost = Math.floor(25 * (sellBaristas + 1));                             //formula for currrent price of Baristas
-    if(credits >= cost && sellBaristas < baristaMax){
+    if(credits >= cost && sellBaristas < baristaMax-1){
+        document.getElementById("help").hidden = false;
         sellBaristas++;
         increaseCredits(-cost);
-        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + baristaMax;
-        document.getElementById("sellBaristaButton").innerHTML = "Sell Barista (" + Math.floor(10 * (sellBaristas + 1)) + " credits)";
+        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + (baristaMax-1);
+        document.getElementById("sellBaristaButton").innerHTML = "Sell Barista (" + Math.floor(25 * (sellBaristas + 1)) + " credits)";
     }
 }
 

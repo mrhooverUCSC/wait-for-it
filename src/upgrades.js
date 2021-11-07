@@ -18,7 +18,10 @@ function largerStore(){
         baristaMax++;
         increaseCredits(-cost);
         document.getElementById("largerStoreButton").innerHTML = "Larger Store " + baristaMax + " (" + Math.floor(100 * Math.pow(baristaMax, 1.4)) + " credits)";
-        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + baristaMax;
+        document.getElementById("sellBaristaButton").hidden = false;
+        document.getElementById("sellBaristas").hidden = false;
+        document.getElementById("baristasText").innerHTML = "Brew Baristas turn beans into coffee. Sell Baristas sell coffee for credits"
+        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + (baristaMax-1);
         document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
     }
 }
@@ -26,9 +29,8 @@ function largerStore(){
 function upgradesCheck(){ //if the requirement has been met, add a new upgrade option
     if(credits >= 50 && !baristasRevealed){ //when 50 credits earned, 
         document.getElementById("brewBaristaButton").hidden = false;
-        document.getElementById("sellBaristaButton").hidden = false;
         document.getElementById("largerStoreButton").hidden = false;
-        document.getElementById("baristasRow").hidden = false;
+        document.getElementById("brewBaristas").hidden = false;
         document.getElementById("baristasText").style.display = "block";
         baristasRevealed = true;
     }
