@@ -17,7 +17,7 @@ function largerStore(){
     if(credits >= cost){
         baristaMax++;
         increaseCredits(-cost);
-        document.getElementById("largerStoreButton").innerHTML = "Larger Store (" + Math.floor(100 * Math.pow(baristaMax, 1.4)) + " credits)";
+        document.getElementById("largerStoreButton").innerHTML = "Larger Store " + baristaMax + " (" + Math.floor(100 * Math.pow(baristaMax, 1.4)) + " credits)";
         document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + baristaMax;
         document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
     }
