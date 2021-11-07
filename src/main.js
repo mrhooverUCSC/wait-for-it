@@ -1,4 +1,5 @@
 let credits = 0;
+let debt = 0;
 let coffeeBeans = 0;
 let coffee = 0;
 let flour = 0;
@@ -6,6 +7,22 @@ let cupcakes = 0;
 
 function borrowCredits(){
     increaseCredits(1);
+    debt++;
+    document.getElementById("payoffDebt").hidden = false;
+    document.getElementById("payoffDebt").innerHTML = "Pay Debt: " + debt;
+}
+function payDebt(){
+    if(debt > 0 && credits >= debt){
+        increaseCredits(-debt);
+        debt = 0;
+        document.getElementById("payoffDebt").hidden = true;
+        document.getElementById("payoffDebt").innerHTML = "Pay Debt: " + 0;    
+    }
+    else if(debt > 0 && credits <= debt){
+        debt = debt - credits;
+        increaseCredits(-credits);
+        document.getElementById("payoffDebt").innerHTML = "Pay Debt: " + debt;    
+    }
 }
 function buyBeans(){
     if(credits >= 1){
@@ -43,7 +60,6 @@ function sellCupcakes(){
         increaseCredits(10);
     }
 }
-
 
 function f(){ //test function
     console.log("f");
