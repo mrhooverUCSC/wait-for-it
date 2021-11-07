@@ -31,12 +31,20 @@ function surpass(){
     if(credits >= 1000){
         increaseCredits(-1000);
         document.getElementById("surpass").hidden = true;
-        document.getElementById("surpass").hidden = true;
+        document.getElementById("teachSellBaristas").hidden = false;
         document.getElementById("cupcakesRow").hidden = false;
         document.getElementById("buyFlour").hidden = false;
         document.getElementById("makeCupcakes").hidden = false;
         document.getElementById("sellCupcakes").hidden = false;
+    }
+}
+
+function surpass2(){
+    if(credits >= 1000){
+        increaseCredits(-1000);
+        document.getElementById("teachSellBaristas").hidden = true;
         document.getElementById("baristasText").innerHTML = "Brew Baristas turn beans into coffee. Sell Baristas sell coffee and cupcakes for credits."
+        taughtBaristas = true;
     }
 }
 

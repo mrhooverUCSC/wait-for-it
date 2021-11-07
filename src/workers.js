@@ -3,6 +3,7 @@ let brewEfficacy = .1
 let sellBaristas = 0;
 let sellEfficacy = .1
 let baristaMax = 1;
+let taughtBaristas = false;
 let cps = 0;
 
 function buyBrewBarista(){
@@ -45,11 +46,11 @@ function buildingsTick(){   //tick every .1 seconds
         }
     }
     if(sellBaristas > 0){//sell baristas sell .1 coffees into .5 credits per second
-        if((sellBaristas * .1) <= cupcakes){
+        if((sellBaristas * .1) <= cupcakes && taughtBaristas){
             increaseCupcakes(-(sellBaristas * .1));
             increaseCredits(sellBaristas * .1 * 10);
         }
-        else if(cupcakes > 0){
+        else if(cupcakes > 0 && taughtBaristas){
             increaseCredits(cupcakes * 10);
             increaseCupcakes(-cupcakes);
         }
