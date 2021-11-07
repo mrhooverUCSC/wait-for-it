@@ -2,8 +2,8 @@ let beansContractCurrently = false;
 let timer = 0;
 
 function beansContract(){
-    if(credits >= 250){
-        increaseCredits(-250);
+    if(credits >= 500){
+        increaseCredits(-500);
         document.getElementById("beansContract").hidden = true;
         document.getElementById("beansContractToggle").hidden = false;
     }

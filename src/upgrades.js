@@ -32,7 +32,7 @@ function upgradesCheck(){ //if the requirement has been met, add a new upgrade o
         document.getElementById("baristasText").style.display = "block";
         baristasRevealed = true;
     }
-    if(credits >= 150 && !beansContractRevealed){
+    if(credits >= 250 && !beansContractRevealed){
         document.getElementById("beansContract").hidden = false;
         document.getElementById("beansContractText").style.display = "block";
         beansContractRevealed = true;
