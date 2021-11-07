@@ -5,7 +5,7 @@ let flour = 0;
 let cupcakes = 0;
 
 function borrowCredits(){
-    increaseCredits(2000);
+    increaseCredits(1);
 }
 function buyBeans(){
     if(credits >= 1){
