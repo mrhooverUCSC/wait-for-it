@@ -2,24 +2,25 @@ let brewBaristas = 0;
 let brewEfficacy = .1
 let sellBaristas = 0;
 let sellEfficacy = .1
+let baristaMax = 1;
 let cps = 0;
 
 function buyBrewBarista(){
     var cost = Math.floor(10 * (brewBaristas + 1));                             //formula for currrent price of Baristas
-    if(credits >= cost){
+    if(credits >= cost && brewBaristas < baristaMax){
         brewBaristas++;
         increaseCredits(-cost);
-        document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas;
+        document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
         document.getElementById("brewBaristaButton").innerHTML = "Brew Barista (" + Math.floor(10 * (brewBaristas + 1)) + " credits)";
     }
 }
 
 function buySellBarista(){
     var cost = Math.floor(10 * (sellBaristas + 1));                             //formula for currrent price of Baristas
-    if(credits >= cost){
+    if(credits >= cost && sellBaristas < baristaMax){
         sellBaristas++;
         increaseCredits(-cost);
-        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas;
+        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + baristaMax;
         document.getElementById("sellBaristaButton").innerHTML = "Sell Barista (" + Math.floor(10 * (sellBaristas + 1)) + " credits)";
     }
 }

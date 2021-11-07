@@ -12,10 +12,23 @@ function betterBeans(){
     }
 }
 
+function largerStore(){
+    var cost = Math.floor(100 * Math.pow(baristaMax, 1.4));                             //formula for currrent price of better beans
+    if(credits >= cost){
+        baristaMax++;
+        increaseCredits(-cost);
+        document.getElementById("largerStoreButton").innerHTML = "Larger Store (" + Math.floor(100 * Math.pow(baristaMax, 1.4)) + " credits)";
+        document.getElementById("sellBaristas").innerHTML = "Sell Baristas: " + sellBaristas + "/" + baristaMax;
+        document.getElementById("brewBaristas").innerHTML = "Brew Baristas: " + brewBaristas + "/" + baristaMax;
+    }
+}
+
 function upgradesCheck(){ //if the requirement has been met, add a new upgrade option
     if(credits >= 50 && !baristasRevealed){ //when 50 credits earned, 
         document.getElementById("brewBaristaButton").hidden = false;
         document.getElementById("sellBaristaButton").hidden = false;
+        document.getElementById("largerStoreButton").hidden = false;
+        document.getElementById("baristasRow").hidden = false;
         document.getElementById("baristasText").style.display = "block";
         baristasRevealed = true;
     }

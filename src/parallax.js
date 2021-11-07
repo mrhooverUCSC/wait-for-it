@@ -7,7 +7,7 @@ let gameSpeed = 1;
 const spaceBackground = new Image();
 spaceBackground.src = './assets/imgs/space.png';
 const foreground = new Image();
-foreground.src = './assets/imgs/barTest.png'
+foreground.src = './assets/imgs/U2O4xq8.png'
 
 
 let x = 0;
