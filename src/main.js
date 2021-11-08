@@ -6,7 +6,7 @@ let flour = 0;
 let cupcakes = 0;
 
 function borrowCredits(){
-    increaseCredits(1);
+    increaseCredits(100000);
     debt++;
     document.getElementById("payoffDebt").hidden = false;
     document.getElementById("payoffDebt").innerHTML = "Pay Debt: " + debt;

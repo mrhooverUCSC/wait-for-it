@@ -7,6 +7,7 @@ let timer = 0;
 function beansContract(){
     var contractCost = Math.floor(500 + (100 * (currentContractUpgrade)));  
     if(credits >= contractCost){
+        document.getElementById("contract").hidden = false;
         document.getElementById("beansContractToggle").hidden = false;
         document.getElementById("beansContractText").innerHTML = "Beans Contract currently turns " + Math.floor(contractRate * 100) + "% of credits into beans every 15 seconds)";
         increaseCredits(-contractCost);
